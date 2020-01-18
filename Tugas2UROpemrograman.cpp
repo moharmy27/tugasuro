@@ -85,6 +85,21 @@ int main(){
             }
 
         }
+        
+        if(operasi == 3)
+    {
+        cout<<"masukan pangkat polinomial suku yang akan menjadi perkalian : ";
+        cin>>pangkat;
+        cout<<"masukan koefisien polinomial suku : ";
+        cin>>koef;
+        for(i = 1; i <= k; i++)
+        {
+            kof1[i] = kof1[i] * koef;
+            pang1[i]= pang1[i]+pangkat;
+
+        }
+        
+    }
 
         cout<<kof1[1]<<"X^"<<pang1[1];
         for(i = 2; i <= k; i++)
