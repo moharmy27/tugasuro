@@ -100,6 +100,17 @@ int main(){
         }
         
     }
+        if(operasi == 4)
+    {
+        
+        for(i = 1; i <= k; i++)
+        {
+            kof1[i]=kof1[i]*pang1[i];
+            pang1[i]=pang1[i]-1;
+
+        }
+        
+    }
 
         cout<<kof1[1]<<"X^"<<pang1[1];
         for(i = 2; i <= k; i++)
