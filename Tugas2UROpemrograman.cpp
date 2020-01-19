@@ -2,13 +2,13 @@
 using namespace std;
 int main(){
 
-    int i,k,l,n,pangkat,koef,operasi;
+    int i,j,k,l,n,pangkat,koef,operasi;
     // variabel pangkat untuk penyimpanan masukan pangkat polinom dan koef untuk koefisien polinom
-  
+
     // array untuk pangkat menyimpan suku suku polinom
     int pang1[100];
     int pang2[100];
-  
+
     // array untuk koefisien menyimpan suku suku polinom
     int kof1[100];
     int kof2[100];
@@ -16,6 +16,8 @@ int main(){
     cout<<"masukan pangkat polinomial suku pertama : ";
     cin>>pangkat;
     pang1[1] = pangkat;
+// nav
+
     cout<<"masukan koefisien polinomial suku pertama : ";
     cin>>koef;
     kof1[1] = koef;
@@ -85,7 +87,7 @@ int main(){
             }
 
         }
-        
+
         if(operasi == 3)
     {
         cout<<"masukan pangkat polinomial suku yang akan menjadi perkalian : ";
@@ -98,21 +100,35 @@ int main(){
             pang1[i]= pang1[i]+pangkat;
 
         }
-        
+
     }
         if(operasi == 4)
     {
-        
+
         for(i = 1; i <= k; i++)
         {
             kof1[i]=kof1[i]*pang1[i];
             pang1[i]=pang1[i]-1;
 
         }
-        
-    }
 
+    }
+        for (i=1;i<=k;i++){
+            if (pang1[i]<0){
+                for (j=i;j<k;j++){
+                    kof1[j]=kof1[j+1];
+                    pang1[j]=pang1[j+1];
+                }
+                k-=1;
+
+            }
+        }
+        
+        if(k==0){
+            break;
+        }
         cout<<kof1[1]<<"X^"<<pang1[1];
+
         for(i = 2; i <= k; i++)
         {
 
@@ -121,3 +137,4 @@ int main(){
         cout<<endl<<endl;
     }
 }
+
